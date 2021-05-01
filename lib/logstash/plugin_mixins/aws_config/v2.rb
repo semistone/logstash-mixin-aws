@@ -12,7 +12,7 @@ module LogStash::PluginMixins::AwsConfig::V2
     opts = {}
 
     opts[:http_proxy] = @proxy_uri if @proxy_uri
-
+    opts[:force_path_style] = @force_path_style if @force_path_style
     if @role_arn
       credentials = assume_role(opts.dup)
       opts[:credentials] = credentials
